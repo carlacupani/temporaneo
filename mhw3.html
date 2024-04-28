@@ -1,14 +1,23 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Netflix Website Clone</title>
+    <meta name="title" content="Netflix Clone">
+    <meta name="description" content="Copia di Netflix, la piu famosa app per guardare film e serie tv">
+    <!-- FAVICON LINK -->
+
+    <!-- GOOGLE FONT LINK -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <!-- CSS LINK -->
     <link rel="stylesheet" href="mhw3.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js" integrity="sha384-3LK/3kTpDE/Pkp8gTNp2gR/2gOiwQ6QaO7Td0zV76UFJVhqLl4Vl3KL1We6q6wR9" crossorigin="anonymous"></script>
-    <script src="mhw3.js"></script>
+    <!-- JS LINK -->
+    <script src="mhw3.js" ></script>
   </head>
   <body>
     <div class="wrapper">
@@ -25,7 +34,12 @@
             <a href="#">Aggiunti di recente</a>                  
         </nav>
         <nav class="sub-nav">
-          <a href="#"><i class="fas fa-search sub-nav-logo"></i></a>
+          <div class="search-box" search-box>
+            <div class="search-wrapper" search-wrapper>
+              <input type="text" name="search" aria-label="search movies" placeholder="Cerca un film..." class="search-field" search-field>
+              <a href="#"><i class="fas fa-search sub-nav-logo"></i></a>
+            </div>
+          </div>
           <a href="#"><i class="fas fa-bell sub-nav-logo"></i></a>
           <a href="#">Account</a>        
         </nav>      

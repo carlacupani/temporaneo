@@ -1,8 +1,58 @@
 /* CSS VARIABLES */
 :root {
-    --primary: #141414;
-    --light: #F3F3F3;
-    --dark: 	#686868;
+  /* COLORS */
+  --background: rgba(15, 17, 21, 1);
+  --banner-background: rgba(49, 48, 54, 1);
+  --white-alpha-20: rgba(255, 255, 255, 0.2);
+  --on-background: rgba(229, 238, 255, 1);
+  --on-surface: rgba(234, 229, 255, 1);
+  --on-surface-variant: rgba(111, 111, 113, 1);
+  --primary: rgba(219, 0, 40, 1);
+  --primary-variant: rgba(216, 44, 75, 1);
+  --rating-color: rgba(250, 183, 0, 1);
+  --surface: rgba(26, 24, 32, 1);
+  --text-color: rgba(149, 148, 153, 1);
+  --white: rgba(255, 255, 255, 1);
+
+  /* GRADIENT COLORS */
+  --banner-overlay: 90deg, rgba(15, 17, 21, 1) 0%, rgba(15, 17, 21, 0.5) 100%;
+  --bottom-overlay: 180deg, rgba(26, 24, 32, 0), rgba(26, 24, 32, 1);
+  }
+
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  li { list-style: none; }
+
+  a, img, span, iframe, button {
+    display: block;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img { height: auto; }
+
+  input, button{
+    background: none;
+    border: none;
+    font: inherit;
+    color: inherit;
+  }
+  
+  input { width: 100%; }
+
+  button {
+    text-align: left;
+    cursor: pointer;
+  }
+  html {
+
   }
   
   html, body {
@@ -14,7 +64,18 @@
     color: var(--light);
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
-    line-height: 1.4;
+    line-height: 1.5;
+    scroll-behavior: smooth;
+  }
+
+  ::-webkit-scrollbar{
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb{
+    background-color: var(--dark);
+    border-radius: 8px;
   }
   
   img {
