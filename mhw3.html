@@ -17,19 +17,19 @@
   <!-- CSS LINK -->
   <link rel="stylesheet" href="mhw3.css">
   <!-- JS LINK -->
-  <script src="mhw3.js"></script>
+  <script src="mhw3.js" defer ></script>
 </head>
 
 <body>
   <!-- HEADER -->
   <header class="header">
-    <div class="logo">
-      <a id="logo" href="mhw3.html">
-        <img src="img/logo.png" alt="Logo Image"></a>
-    </div>
+
+    <a id="logo" href="mhw3.html">
+      <img src="img/logo.png" width="140" height="32" alt="Logo Image">
+    </a>
 
     <div class="search-box" search-box>
-      <div class="search-wrapper " search-wrapper>
+      <div class="search-wrapper searching" search-wrapper>
         <input type="text" name="search" aria-label="search movies" placeholder="Cerca un film . . ." class="search-field" autocomplete="off" search-field >
         <img src="img/search.png" width="24" height="24" alt="search" class="leading-icon">
       </div>
@@ -37,11 +37,10 @@
       <button class="search-btn" search-toggler>
         <img src="img/close.png" width="24" height="24" alt="close search box">
       </button>
-
     </div>
     
-    <button class="search-btn" search-toggler>
-      <img src="img/search.png" width="24" height="24" alt="close search box">
+    <button class="search-btn" search-toggler menu-close>
+      <img src="img/search.png" width="24" height="24" alt="open search box">
     </button>
 
     <button class="menu-btn" menu-btn menu-toggler>
@@ -53,7 +52,19 @@
   <!-- END OF HEADER -->
 
   <!-- MAIN CONTAINER -->
-  
+  <nav class="sidebar" sidebar>
+    <div class="sidebar-inner">
+      <div class="sidebar-list">
+        <p class="title">Genere</p>
+        <a href="#" menu-close class="sidebar-link">Azione</a>
+        <a href="#" menu-close class="sidebar-link">Horror</a>
+        <a href="#" menu-close class="sidebar-link">Commedia</a>
+        <a href="#" menu-close class="sidebar-link">Avventura</a>
+        <a href="#" menu-close class="sidebar-link">Drama</a>
+        <a href="#" menu-close class="sidebar-link">Scifi</a>
+      </div>
+    </div>
+  </nav>
   <!-- END OF MAIN CONTAINER -->
 
   <!-- LINKS -->
