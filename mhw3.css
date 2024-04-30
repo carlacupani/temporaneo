@@ -103,13 +103,79 @@ img {
 }
 
 /* animazioni */
+.search-wrapper::before {
+  position: absolute;
+  top: 14px;
+  right: 12px;
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--white);
+  border-radius: 24px;
+  border-inline-end-color: transparent;
+  animation: loading 500ms linear infinite;
+  display: none;
+}
+
 .search-wrapper.searching::before {
   display: block;
 }
 
 @keyframes loading {
-  0% { transform: rotate(0); }
-  100% { transform: rotate(1turn);}
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.heading,
+.title,
+.title-large {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.title {
+  font-size: 32px;
+}
+
+.heading {
+  color: var(--white);
+  font-size: 64px;
+  line-height: 1.2;
+}
+
+.title-large {
+  font-size: 42px;
+}
+
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.btn {
+  color: var(--white);
+  font-size: 24px;
+  font-weight: 700;
+  max-width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-block: 12px;
+  padding-inline: 20px 24px;
+  border-radius: 8px;
+  transition: 250ms ease;
 }
 
 
@@ -128,7 +194,8 @@ img {
   margin-inline-end: auto;
 }
 
-.search-btn, .menu-btn {
+.search-btn,
+.menu-btn {
   padding: 12px;
 }
 
@@ -150,11 +217,13 @@ img {
   opacity: 1;
 }
 
-.menu-btn.active .menu, .menu-btn .close {
+.menu-btn.active .menu,
+.menu-btn .close {
   display: none;
 }
 
-.menu-btn .menu, .menu-btn.active .close {
+.menu-btn .menu,
+.menu-btn.active .close {
   display: block;
 }
 
@@ -181,20 +250,6 @@ img {
   flex-grow: 1;
 }
 
-.search-wrapper::before {
-  position: absolute;
-  top: 14px;
-  right: 12px;
-  content: "";
-  width: 20px;
-  height: 20px;
-  border: 3px solid var(--white);
-  border-radius: 24px;
-  border-inline-end-color: transparent;
-  animation: loading 500ms linear infinite;
-  display: none;
-}
-
 .search-field {
   background-color: var(--banner-background);
   height: 48px;
@@ -205,7 +260,7 @@ img {
   transition: 250ms ease;
 }
 
-.search-field::placeholder { 
+.search-field::placeholder {
   color: var(--on-surface-variant);
 }
 
@@ -218,7 +273,8 @@ img {
   padding-inline-start: 16px;
 }
 
-.search-wrapper, .leading-icon {
+.search-wrapper,
+.leading-icon {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -233,7 +289,110 @@ img {
 
 /* MAIN CONTIANER */
 
+/* SIDEBAR */
 
+.sidebar {
+  position: absolute;
+  background-color: var(--background);
+  top: 96px;
+  bottom: 0;
+  left: -340px;
+  max-width: 340px;
+  width: 100%;
+  border-block-start: 1px solid var(--banner-background);
+  overflow-y: overlay;
+  z-index: 4;
+  visibility: hidden;
+}
+
+.sidebar.active {
+  transform: translateX(340px);
+  visibility: visible;
+}
+
+.sidebar-inner {
+  display: grid;
+  gap: 20px;
+  padding-block: 36px;
+}
+
+.sidebar-inner::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+.sidebar-inner:is(:hover, :focus-within)::-webkit-scrollbar-thumb {
+  background-color: var(--banner-background);
+}
+
+.sidebar-inner::-webkit-scrollbar-button {
+  height: 16px;
+}
+
+.sidebar-list {
+  padding-inline: 36px;
+}
+
+.sidebar-link {
+  color: var(--on-surface-variant);
+  transition: 250ms ease;
+}
+
+.sidebar-link:is(:hover, :focus-visible) {
+  color: var(--on-background);
+}
+
+.sidebar-list {
+  display: grid;
+  gap: 8px;
+}
+
+.sidebar-list .title {
+  margin-block-end: 8px;
+}
+
+.overlay {
+  position: fixed;
+  top: 96px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: var(--background);
+  opacity: 0;
+  pointer-events: none;
+  transition: 250ms ease;
+  z-index: 3;
+}
+
+.overlay.active {
+  opacity: 0.5;
+  pointer-events: all;
+}
+
+/* HOME PAGE */
+
+.container {
+  position: relative;
+  background-color: var(--surface);
+  color: var(--on-surface);
+  padding: 24px 20px 48px;
+  height: calc(100vh - 96vh);
+  overflow-y: overlay;
+  z-index: 1;
+}
+
+.container::after {
+  content: "";
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background-image: linear-gradient(var(--bottom-overlay));
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* BANNER */
 
 /* LINKS */
 
